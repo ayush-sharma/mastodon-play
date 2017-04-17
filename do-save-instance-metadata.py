@@ -16,6 +16,8 @@ for item in data:
         if ~(key in item):
             item[key] = None
 
-    insert_values_in_db(name=item['name'], up_time=item['uptime'], up=item['up'], https_score=item['https_score'],
-                        https_rank=item['https_rank'], ipv6=item['ipv6'], open_registrations=item['openRegistrations'],
-                        users=item['users'], statuses=item['statuses'], connections=item['connections'])
+    insert_instance_metadata_in_db(name=item['name'], up_time=item['uptime'], up=item['up'],
+                                   https_score=item['https_score'],
+                                   https_rank=item['https_rank'], ipv6=item['ipv6'],
+                                   open_registrations=item['openRegistrations'],
+                                   users=item['users'], statuses=item['statuses'], connections=item['connections'])

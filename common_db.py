@@ -29,8 +29,9 @@ def create_db():
     connection.close()
 
 
-def insert_values_in_db(name, up_time, up, https_score, https_rank, ipv6, open_registrations, users, statuses,
-                        connections):
+def insert_instance_metadata_in_db(name, up_time, up, https_score, https_rank, ipv6, open_registrations, users,
+                                   statuses,
+                                   connections):
     """ Insert values in database """
 
     database_file = get_config('local_db_file_name')
