@@ -1,6 +1,8 @@
 import sqlite3
 import time
 
+from common_config import *
+
 
 def get_db_keys():
     return ['name', 'uptime', 'up', 'https_score', 'https_rank', 'ipv6', 'openRegistrations', 'users', 'statuses',
@@ -10,7 +12,7 @@ def get_db_keys():
 def create_db():
     """ Check if DB exists and the tables are there. Create it if not found. """
 
-    database_file = 'data.db'
+    database_file = get_config('local_db_file_name')
     connection = sqlite3.connect(database=database_file)
     cursor = connection.cursor()
 
@@ -31,7 +33,7 @@ def insert_values_in_db(name, up_time, up, https_score, https_rank, ipv6, open_r
                         connections):
     """ Insert values in database """
 
-    database_file = 'data.db'
+    database_file = get_config('local_db_file_name')
     connection = sqlite3.connect(database=database_file)
     cursor = connection.cursor()
 
