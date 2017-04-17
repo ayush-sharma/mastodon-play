@@ -1,9 +1,6 @@
-import locale
-
 from common_network import *
 from common_db import *
 
-locale.setlocale(locale.LC_ALL, 'en_US')
 data = get_mastodon_data_json()
 
 create_db()
